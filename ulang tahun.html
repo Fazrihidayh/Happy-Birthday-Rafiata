@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun Rafiata 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Pacifico', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d84315;
+      margin: 10px;
+    }
+
+    p {
+      font-size: 1.3em;
+      color: #6d4c41;
+    }
+
+    .gift-box {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      background: #ff5252;
+      border-radius: 10px;
+      margin-top: 30px;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+      transition: transform 0.4s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.05);
+    }
+
+    .lid {
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 150px;
+      height: 30px;
+      background: #ff1744;
+      border-radius: 10px 10px 0 0;
+      transition: top 0.5s ease;
+      z-index: 2;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 0;
+      left: 70px;
+      width: 10px;
+      height: 150px;
+      background: #fff;
+      z-index: 3;
+    }
+
+    .message {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.6em;
+      color: #2e7d32;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      p { font-size: 1.1em; }
+      .gift-box { width: 120px; height: 120px; }
+      .lid { width: 120px; }
+      .ribbon { left: 55px; }
+      .message { font-size: 1.3em; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Selamat Ulang Tahun Rafiata Maulana 🎂</h1>
+  <p>Semoga makin konbrut! 🔥</p>
+
+  <div class="gift-box" onclick="bukaKado()">
+    <div class="lid" id="lid"></div>
+    <div class="ribbon"></div>
+  </div>
+
+  <div class="message" id="message">
+    🎁 selamat kamu kena prank
+  </div>
+
+  <!-- Musik ulang tahun -->
+  <audio id="musik" autoplay loop>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <script>
+    function bukaKado() {
+      const lid = document.getElementById('lid');
+      const message = document.getElementById('message');
+      lid.style.top = "-100px";
+      message.style.display = "block";
+
+      // Mulai ulang musik kalau belum jalan
+      const musik = document.getElementById('musik');
+      musik.play();
+    }
+  </script>
+</body>
+</html>
